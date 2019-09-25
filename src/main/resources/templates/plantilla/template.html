@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+<meta charset="UTF-8">
+<title>CRUD Clientes</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+
+	<!-- BARRA DE NAVEGACION -->
+	<header th:fragment="header">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<div class="container">
+				<a class="navbar-brand" href="#">
+					<strong>MyLogo</strong>
+				</a>
+				
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				
+				<!-- ENLACES DEL MENU -->
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active"><a class="nav-link" th:href="@{/index}">Inicio
+								<span class="sr-only">(current)</span>
+						</a></li>
+						<li class="nav-item"><a class="nav-link"th:href="@{/views/clientes/}">Clientes</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<!-- MENSAJES -->
+		<div class="alert alert-success alert-dismissable" th:if="${success != null}">
+			<label th:text="${success}"></label>
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+		</div>
+		<div class="alert alert-danger alert-dismissable" th:if="${error != null}">
+			<label th:text="${error}"></label>
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+		</div>
+		<div class="alert alert-warning alert-dismissable" th:if="${warning != null}">
+			<label th:text="${warning}"></label>
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+		</div>
+		<div class="alert alert-info alert-dismissable" th:if="${info != null}">
+			<label th:text="${info}"></label>
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+		</div>
+		
+					
+	</header>
+
+	<!-- CONTENIDO -->
+	<div class="container"></div>
+
+
+	<!-- PIE DE PAGINA -->
+	<footer th:fragment="footer" class="bg-dark text-center text-white fixed-bottom">
+
+		<div class="container">
+			<p>Copyright Javacode503 &copy; -2019</p>
+		</div>
+
+		<script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+
+	</footer>
+
+</body>
+</html>
